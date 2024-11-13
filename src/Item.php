@@ -490,8 +490,8 @@ class Item implements CartNode
             throw new InvalidArgumentException('The quantity attribute of the item is required and must be an integer.');
         }
 
-        if (array_key_exists('price', $attributes) && (!is_numeric($attributes['price']) || floatval($attributes['price']) < 0)) {
-            throw new InvalidArgumentException('The price attribute of the item must be an float type greater than or equal to 0.');
+        if (array_key_exists('price', $attributes) && (!is_numeric($attributes['price']))) {
+            throw new InvalidArgumentException('The price attribute of the item must be an float type.');
         }
 
         if (array_key_exists('taxable', $attributes) && !is_bool($attributes['taxable'])) {
